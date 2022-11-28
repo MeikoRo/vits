@@ -46,6 +46,8 @@ def load_checkpoint(checkpoint_path, model, optimizer=None):
 def save_checkpoint(model, optimizer, learning_rate, iteration, checkpoint_path):
   logger.info("Saving model and optimizer state at iteration {} to {}".format(
     iteration, checkpoint_path))
+  print("Saving model and optimizer state at iteration {} to {}".format(
+    iteration, checkpoint_path))  
   if hasattr(model, 'module'):
     state_dict = model.module.state_dict()
   else:
